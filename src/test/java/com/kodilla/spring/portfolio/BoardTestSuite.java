@@ -8,6 +8,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 public class BoardTestSuite {
 
@@ -31,5 +33,8 @@ public class BoardTestSuite {
         System.out.println("In progress : " + Arrays.toString(inProgressList.toArray()));
         System.out.println("To do : " + Arrays.toString(toDoList.toArray()));
 
+        assertEquals("Clean your room", doneList.get(0));
+        assertEquals("Do dishes", inProgressList.get(0));
+        assertEquals("Buy a dog food", toDoList.get(0));
     }
 }
